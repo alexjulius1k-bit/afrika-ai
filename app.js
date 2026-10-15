@@ -12,19 +12,19 @@ const profileButton = document.getElementById("profile-button");
 
 const pages = {
   learn: {
-    title: "📚 Learn with AFRIKA AI",
+    title: "📚 Learn with AFRICA AI",
     description:
       "Build your knowledge, practise English, learn technology and discover useful skills. Ask AFRIKA AI a question to get started."
   },
 
   business: {
-    title: "💼 Business with AFRIKA AI",
+    title: "💼 Business with AFRICA AI",
     description:
       "Explore business ideas, learn marketing, improve customer service and discover ways to solve real problems."
   },
 
   writing: {
-    title: "✍️ Writing with AFRIKA AI",
+    title: "✍️ Writing with AFRICA AI",
     description:
       "Get help drafting messages, letters, stories, business descriptions and other written content."
   },
@@ -102,7 +102,7 @@ document.querySelectorAll('.bottom-nav a[href="#explore"]').forEach((link) => {
     contentPanel.hidden = false;
     chatSection.hidden = true;
 
-    contentTitle.textContent = "🔎 Explore AFRIKA AI";
+    contentTitle.textContent = "🔎 Explore AFRICA AI";
     contentDescription.textContent =
       "Discover learning resources, business ideas, writing help and new ways to use artificial intelligence.";
 
@@ -119,7 +119,7 @@ profileButton.addEventListener("click", () => {
 
   contentTitle.textContent = "👤 Your Profile";
   contentDescription.textContent =
-    "Welcome to AFRIKA AI! Profile accounts and personal settings are not available yet.";
+    "Welcome to AFRICA AI! Profile accounts and personal settings are not available yet.";
 
   contentPanel.scrollIntoView({
     behavior: "smooth",
@@ -137,7 +137,7 @@ chatForm.addEventListener("submit", (event) => {
   showMessage("You", question, "user");
 
   showMessage(
-    "AFRIKA AI",
+    "AFRICA AI",
     "Your message has been received by this demo interface. The AI service is not connected yet. We'll connect it through a secure backend in the next stage.",
     "assistant"
   );
@@ -146,4 +146,4 @@ chatForm.addEventListener("submit", (event) => {
   userInput.focus();
 });
 
-console.log("AFRIKA AI interface loaded successfully.");
+console.log("AFRICA AI interface loaded successfully.");

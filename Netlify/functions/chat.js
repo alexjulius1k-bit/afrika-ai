@@ -1,8 +1,10 @@
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
         error: "Method not allowed"
       })
@@ -12,7 +14,7 @@ exports.handler = async (event) => {
   try {
     const { message } = JSON.parse(event.body || "{}");
 
-    if (!message || typeof message !== "string") {
+    if (typeof message !== "string" || !message.trim()) {
       return {
         statusCode: 400,
         body: JSON.stringify({
@@ -43,7 +45,7 @@ exports.handler = async (event) => {
         body: JSON.stringify({
           model: "gpt-4.1-mini",
           instructions:
-            "You are AFRICA AI, a helpful African AI assistant. Help people learn English, build businesses, write, and solve problems. Use simple, clear language for beginners.",
+            "You are AFRICA AI , a friendly African AI assistant. Help users learn English using simple words and clear examples. Also help with business, writing, and learning.",
           input: message.trim()
         })
       }
@@ -65,4 +67,29 @@ exports.handler = async (event) => {
     const answer = (data.output || [])
       .flatMap(item => item.content || [])
       .filter(item => item.type === "output_text")
-      .map
+      .map(item => item.text)
+      .join("\n");
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        reply: answer || "Please try asking me again."
+      })
+    };
+  } catch (error) {
+    console.error("Chat function error:", error.message);
+
+    return {
+      statusCode: 500,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        error: "Something went wrong. Please try again."
+      })
+    };
+  }
+};

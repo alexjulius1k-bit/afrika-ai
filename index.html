@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="theme-color" content="#07111f">
+  <meta name="description"
+        content="AFRIKA AI helps you learn, create, write and explore new possibilities with artificial intelligence.">
+
+  <title>AFRIKA AI — Your African AI Assistant</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="#home" class="logo">🌍 AFRIKA AI</a>
+    <p>Your African AI assistant</p>
+  </header>
+
+  <main>
+    <section id="home" class="welcome">
+      <span class="badge">✨ Intelligence for everyone</span>
+
+      <h1>Welcome to AFRIKA AI</h1>
+
+      <p>
+        Ask questions, learn new skills, grow your business
+        and discover new possibilities with AI.
+      </p>
+    </section>
+
+    <section class="features" aria-label="Explore AFRIKA AI">
+      <button class="feature-btn" data-page="learn">
+        📚 <span>Learn</span>
+      </button>
+
+      <button class="feature-btn" data-page="business">
+        💼 <span>Business</span>
+      </button>
+
+      <button class="feature-btn" data-page="writing">
+        ✍️ <span>Writing</span>
+      </button>
+
+      <button class="feature-btn" data-page="ai">
+        🤖 <span>AI Assistant</span>
+      </button>
+    </section>
+
+    <section id="content" class="content-panel" hidden>
+      <h2 id="content-title"></h2>
+      <p id="content-description"></p>
+      <button id="back-home" type="button">← Back to chat</button>
+    </section>
+
+    <section id="chat" class="chat">
+      <div class="chat-heading">
+        <h2>💬 Chat with AFRIKA AI</h2>
+        <p>What would you like help with today?</p>
+      </div>
+
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message assistant-message">
+          <strong>AFRIKA AI</strong>
+          <p>Hello! 👋 I'm AFRIKA AI. How can I help you today?</p>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <label for="user-input">Your message</label>
+
+        <div class="input-row">
+          <input
+            id="user-input"
+            type="text"
+            placeholder="Ask AFRIKA AI anything..."
+            autocomplete="off"
+            required
+          >
+
+          <button id="send-button" type="submit">Send</button>
+        </div>
+      </form>
+
+      <p class="notice">
+        AI responses can make mistakes. Verify important information.
+      </p>
+    </section>
+
+    <section id="explore" class="bottom-section">
+      <h2>Explore new possibilities</h2>
+      <p>Learn, create, solve problems and discover new ideas.</p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <a href="#home">🏠 <span>Home</span></a>
+    <a href="#explore">🔎 <span>Explore</span></a>
+    <a href="#chat">🤖 <span>Assistant</span></a>
+    <button id="profile-button" type="button">
+      👤 <span>Profile</span>
+    </button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
